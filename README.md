@@ -13,8 +13,8 @@ Finally, my next steps are to work on my topic modeling of this data.
 I wanted a project with a managable scale where I could work from begining to end of the text analysis process starting from data ingestion to the creation of an end data project.
 This seemed to me to be the best way for me to do so. In particular, I wanted to practice working more with topic modeling and the various assumptions of different models and with pickling the resulting topic models as well as using the predicted models as attributes of the data. 
 #### Results
-#### Caveat
-This data likely isn't exhaustive because it relies on what was found on the internet archive. Thus, it's difficult to go ahead and say that this is a fair coverage of the problem space. Howevr, it is also necccessary to say that this is likely a *good enough* representation to start analysis from. 
+#### Caveats
+This data likely isn't exhaustive because it relies on what was found on the internet archive. Thus, it's difficult to go ahead and say that this is a fair coverage of the problem space. Howevr, it is also necccessary to say that this is likely a *good enough* representation to start analysis from. Further, while TextBlob, FastText and VADER are decent enough at providing an estimate (sometimes pretty good) for sentiment or language, they remain an *estimate*, not the ground truth. 
 ##### Basic Exploration
 It's pretty clear from the start that the numbers of press releases aren't proportional to the size of the tenure of an ambassador. 
 This isn't too surprising as some periods in time are more eventful than others. 
@@ -52,6 +52,16 @@ Looking at Ambassador Xioming's tenure, it's clear that like Ambassador Zeguang'
 Looking at when the ambassadorship was vacant, it's quite clear that the focus isn't too different when compared to when there is an ambassador in office. This would seem to indicate the focus of the messaging is driven by events more than anything else. 
 
 ###### Sentiment Analysis
+Starting with the Textblob sentiment and descriptive statistics, we can by just looking at the mean Textblob sentiment, we can see that Ambassador Xiaoming's releases seem to have a lower sentiment and a greater standard deviation. To keep this in context, Textblob uses a scale of 1 to -1 for sentiment with 0 being neutral. Thus, a sentiment score of .59 would be fairly positive. Of course, one issue here is sentiment is always with respect to something and in this case, the object of this sentiment is uknown. 
+The mean yearly sentiment wasn't too informative because two of the categories have less than a year of data. 
+Once I resampled on a monthly basis I could easily see how the mean sentiment has changed over time. It appears that the press releases have a decent amount of variability over time ranging from quite negative sentiment to moderately positive when sampled on a monthly basis to generally positive when sampled on a yearly basis. 
+
+Looking at VADER, we see a different story just from the descriptive statistics. In contrast to the Textblob sentiment, VADER describes the vacant ambassadorship as producing the most negative releases. 
+The VADER sentiment on both a yearly and monthly sampling mirrors the broad trends we see with the TextBlob sentiment where Ambassador Xiaoming has tended to be more variable with the sentiment of press releases under his tenure and when there was no ambassador it was more negative. 
+
+There are caveats here with reagrd to this analysis. The sentiment models aren't trained on diplomatic language and aren't exactly optimized for this task. Thus, the sentiment needs to be taken with a grain of salt. 
+Additionally, because we're focusing on the mean, outliers can distort what we see here. 
+Finally, this tends to assume that the person in office as Ambassador has a greater impact on the press releases' wording and thus sentiment than current events or decisions from the leadership of the foreign affairs team of a nation (or the person writing the release).
 
 
 ##### Topic Modeling
