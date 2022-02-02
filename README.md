@@ -28,6 +28,31 @@ Both title length and body length have increased over time with both creeping hi
 I plan to further explore this by breaking it down by ambassador at a future date. 
 
 ##### Advanced Exploration
+###### Language Classification, Preprocessing, & Term Frequency
+Starting with language classification, unsurprisingly for English language press releases, the language is always English according to FastText's language classifier. After cleaning and preprocessing by removing stopwords and lemmatizing words (among other things), I moved ahead by examining term frequencies.
+Starting with unigrams and their frequency, we don't see anything too surprising here to a student of global affairs. Quite a bit about China and Chinese, Hong Kong, the UK. Standard terms such as international, right, law, global, government, and security. "Question" isn't too surprising as it is a common enough term that pops up in the corpus (many of the releases follow a Q&A format to a degree). While "th" clearly refers to dates (after I removed the #'s).
+Moving to analyzing term frequency by ambassadorial term, we can see some interesting things. 
+
+Looking at the term frequency under Ambassador Zeguang, we can see that there a few words where there appears to have been some pre-processing issues ("thischina" & "victimchina"). Interestingly, it also looks like a lot of the terms in the top 50 words are verbs in either the past or present tense. As I am not too familiar with press releases from embassies, it is entirely possible this is the norm. 
+
+Looking at the term frequency under Ambassador Xiaoming, we can see that we again have words messed up by the pre-processing (or perhaps for another reason) ("compromisewithdrawal", "detectedchina" & "provincialmunicipaldistrictcounty"). However, the words here are not action words in the same way Ambassador Zeguang had them so we can say there's a qualitative difference between the messaging under these two ambassadors.
+
+Looking at the terms when there was no ambassador in office, we can see the terms are different again. "Refutation" is a strong word and is the most frequent term. Overall, the seeming sentiment of the top terms here tend to be more negative and the words seem to be more combative. Again, we have the same issue with pre-processing ("reproachfifth"). Looking at Hong, we can guess that related to Hong Kong (as SAR likely does) but until we run the bi-gram analysis, we can't say for sure.
+
+Overall, it is clear the terms that are most frequent with each ambassador (or when it is vacant) are quite different. While this isn't shocking, it shows the degree to which who is in a role affacts word choices (though here, one *can* make a reasonable argument for international affairs and events acting as a confounding factor). 
+
+Pivoting to bigrams and trigrams, We can pretty clearly see that the top terms aren't too different when we include bigrams and trigrams. A few make it into there: "national security", "internal affair", "chinese embassy", "hong kong". These are of course rather obvious ones to  a student of Chinese relations. 
+
+When examining each ambassador in turn, we see a few differences between ambassadors. 
+
+Looking at Ambassador Zeguang's tenure, it's clear that the main focus is China, Hong Kong, and a potpourri of words relating to Chinese security concerns. 
+
+Looking at Ambassador Xioming's tenure, it's clear that like Ambassador Zeguang's tenure, it's focused mostly on China and Hong Kong and relevant issues appearing during his tenure. 
+
+Looking at when the ambassadorship was vacant, it's quite clear that the focus isn't too different when compared to when there is an ambassador in office. This would seem to indicate the focus of the messaging is driven by events more than anything else. 
+
+###### Sentiment Analysis
+
 
 ##### Topic Modeling
 Still working on this
