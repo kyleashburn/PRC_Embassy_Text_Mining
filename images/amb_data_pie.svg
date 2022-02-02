@@ -7,7 +7,7 @@
   <rdf:RDF xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
    <cc:Work>
     <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
-    <dc:date>2022-02-01T18:03:19.744223</dc:date>
+    <dc:date>2022-02-01T21:37:49.866615</dc:date>
     <dc:format>image/svg+xml</dc:format>
     <dc:creator>
      <cc:Agent>
@@ -27,7 +27,7 @@ L 432 288
 L 432 0 
 L 0 0 
 z
-" style="fill:none;"/>
+" style="fill:#c0c0c0;"/>
   </g>
   <g id="axes_1">
    <g id="patch_2">
